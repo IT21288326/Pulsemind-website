@@ -8,7 +8,7 @@ const AboutUs = () => {
       name: "Dharmasena U.D.S.V.",
       id: "IT21288326",
       role: "Component 1 - Gamified ADHD Symptom Assessment",
-      image: `${process.env.PUBLIC_URL}/img/members/dharmasena.PNG`
+      image: `${process.env.PUBLIC_URL}/img/members/dharmasena.jpg`
     },
     {
       name: "Manamperi R.S.",
