@@ -2,7 +2,6 @@
   "name": "pulsemind_website",
   "version": "0.1.0",
   "homepage": "https://IT21288326.github.io/Pulsemind-website",
-
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
@@ -22,7 +21,6 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-
   },
   "eslintConfig": {
     "extends": [

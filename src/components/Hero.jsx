@@ -14,7 +14,8 @@ const Hero = () => {
         
         {/* Right side - Image */}
         <div className="hero-image">
-          <img src="/img/c.jpg" alt="ADHD Assessment Tool" />
+          <img src={`${process.env.PUBLIC_URL}/img/c.jpg`} alt="ADHD Assessment Tool" />
+
         </div>
       </div>
     </section>
