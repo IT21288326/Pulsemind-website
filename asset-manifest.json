@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Pulsemind-website/static/css/main.64eddab4.css",
+    "main.css": "/Pulsemind-website/static/css/main.1f05be69.css",
     "main.js": "/Pulsemind-website/static/js/main.f78f485a.js",
     "static/js/453.2e22e1d3.chunk.js": "/Pulsemind-website/static/js/453.2e22e1d3.chunk.js",
     "static/media/v.jpg": "/Pulsemind-website/static/media/v.80641e52c5830bf1bd99.jpg",
     "static/media/w14.jpg": "/Pulsemind-website/static/media/w14.aca57549cee8ade9cbc6.jpg",
     "index.html": "/Pulsemind-website/index.html",
-    "main.64eddab4.css.map": "/Pulsemind-website/static/css/main.64eddab4.css.map",
+    "main.1f05be69.css.map": "/Pulsemind-website/static/css/main.1f05be69.css.map",
     "main.f78f485a.js.map": "/Pulsemind-website/static/js/main.f78f485a.js.map",
     "453.2e22e1d3.chunk.js.map": "/Pulsemind-website/static/js/453.2e22e1d3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.64eddab4.css",
+    "static/css/main.1f05be69.css",
     "static/js/main.f78f485a.js"
   ]
 }
