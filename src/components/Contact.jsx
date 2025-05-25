@@ -44,10 +44,10 @@ const Contact = () => {
                     <br></br>
                    
                       <div className="contact-item">
-                        <span>+1 (555) 123-4567</span>
+                        <span>+94 (11) 754 4801</span>
                       </div>
                       <div className="contact-item">
-                        <span>info@pulsemind.org</span>
+                        <span>info@sliit.lk</span>
                       </div>
                     
                   </div>
