@@ -79,11 +79,12 @@ nav ul li a:hover {
     overflow: hidden;
 }
 
-.container {
+/* .container definition for hero scope, already present but good to note */
+/* .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0;
-}
+    padding: 0; /* Note: Hero section's container had padding:0, while global has 0 20px. Be mindful of this override if .hero .container is used. */
+/* } */
 
 .hero-grid {
     display: grid;
@@ -142,29 +143,6 @@ nav ul li a:hover {
     object-position: center;
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-    .hero-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .hero-content {
-        order: 1;
-        padding: 40px 20px;
-        text-align: center;
-    }
-    
-    .hero-image {
-        order: 0;
-        position: relative;
-        height: 350px;
-    }
-    
-    .hero-btn {
-        align-self: center;
-    }
-}
-
 /* Section Styles */
 /* section {
     padding: 60px 0;
@@ -172,21 +150,21 @@ nav ul li a:hover {
 
 .container-milestones{
     padding: 30px;
-    background-image: url('./w14.jpg');
+    background-image: url('./w14.jpg'); /* Ensure this path is correct relative to your CSS or use an absolute path */
     background-size: cover;
+    background-position: center;
 }
 .container-domain{
     padding-top: 30px;
     padding-left: 130px;
     padding-right: 130px;
-      padding-bottom: 30px;
+    padding-bottom: 30px;
 }
 .container-presentations{
     padding: 30px;
-    
 }
 .container-aboutus{
-   padding-top: 30px;
+    padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 130px;
     padding-right: 130px;
@@ -197,19 +175,21 @@ nav ul li a:hover {
     padding-bottom: 50px;
     padding-left: 130px;
     padding-right: 130px;
-    background-image: url('./v.jpg');
+    background-image: url('./v.jpg'); /* Ensure this path is correct */
     background-size: cover;
+    background-position: center;
 }
 .section-title {
     font-size: 32px;
     text-align: center;
     color: #4B5563;
+    margin-bottom: 20px; /* Added for spacing */
 }
 .section-title1 {
     font-size: 32px;
     text-align: center;
     color: #4B5563;
-    
+    margin-bottom: 20px; /* Added for spacing */
 }
 .section-subtitle {
     font-size: 18px;
@@ -224,7 +204,6 @@ nav ul li a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    
 }
 
 .domain-card {
@@ -254,7 +233,6 @@ nav ul li a:hover {
 /* Milestones Section */
 .milestones {
     color: #F3F4F6;
-
 }
 .section-title-mil {
     font-size: 2.5rem;
@@ -279,7 +257,6 @@ nav ul li a:hover {
     color: #e0e4eb;
 }
 
-
 .timeline {
     position: relative;
     max-width: 800px;
@@ -299,12 +276,12 @@ nav ul li a:hover {
 
 .milestone {
     position: relative;
-    width: 45%;
+    width: 45%; /* Adjusted in media query */
     padding: 20px;
     background-color: white;
     border-radius: 6px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-   
+    margin-bottom: 20px; /* Added for spacing between stacked items on mobile */
 }
 
 .milestone::after {
@@ -312,7 +289,7 @@ nav ul li a:hover {
     position: absolute;
     width: 20px;
     height: 20px;
-    right: -10px;
+    right: -10px; /* Adjusted in media query */
     top: 30px;
     background-color: #5c97f6;
     border-radius: 50%;
@@ -320,15 +297,15 @@ nav ul li a:hover {
 }
 
 .left {
-    left: 0;
+    left: 0; /* Adjusted in media query */
 }
 
 .right {
-    left: 55%;
+    left: 55%; /* Adjusted in media query */
 }
 
 .right::after {
-    left: -10px;
+    left: -10px; /* Adjusted in media query */
 }
 
 .milestone-title {
@@ -409,6 +386,7 @@ nav ul li a:hover {
     padding: 8px 16px;
     color: #5c97f6;
     border: none;
+    background-color: transparent; /* Added for consistency, assuming it's like a link */
     border-radius: 6px;
     font-weight: 500;
     font-size: 14px;
@@ -419,7 +397,8 @@ nav ul li a:hover {
 
 .download-btn:hover {
     transform: translateY(-1px);
-    }
+    color: #4a7fd9; /* Added hover effect for color */
+}
 
 .download-btn:active {
     transform: translateY(0);
@@ -433,20 +412,6 @@ nav ul li a:hover {
 
 .download-icon {
     font-size: 16px;
-}
-
-/* Responsive design for smaller screens */
-@media (max-width: 600px) {
-    .document-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    
-    .download-btn {
-        align-self: flex-end;
-        width: auto;
-    }
 }
 
 /* Alternative compact button style */
@@ -473,14 +438,6 @@ nav ul li a:hover {
     animation: spin 1s linear infinite;
     margin-left: 8px;
 }
-/* .sub-download {
-          font-size: 14px;
-          margin-left: auto;
-          color: #5c97f6;
-          text-decoration: none;
-          font-weight: 500;
-          transition: color 0.3s;
-        } */
 
 @keyframes spin {
     to {
@@ -530,7 +487,8 @@ nav ul li a:hover {
 .supervisors-grid {
     max-width: 900px;
     margin: 0 auto;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* This will become 1 column on smaller screens naturally */
+    gap: 30px; /* Added for consistency with .team-container */
 }
 
 .team-card {
@@ -592,41 +550,26 @@ nav ul li a:hover {
     font-size: 15px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .supervisors-section,
-    .team-section {
-        margin-bottom: 40px;
-    }
-    
-    .subsection-title {
-        font-size: 20px;
-    }
-    
-    .team-container,
-    .supervisors-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-}
-
 /* Contact Section */
 .contact {
-    background-color: #F3F4F6;
+    background-color: #F3F4F6; /* This is overridden by container-con background image */
 }
 
 .contact-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
-    max-width: 1000px;
+    max-width: 1000px; /* This will be centered by .container-con's padding or container class */
+    margin: 0 auto; /* Center the grid if container-con doesn't have max-width */
 }
 
 .contact-info {
-    background-color: white;
+    background-color: white; /* This seems to be for a different design, .container-con has a background image and form is translucent */
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* Styles for contact info within the .container-con context */
+    color: #ffffff; /* Assuming text should be white due to background image */
 }
 
 .contact-item {
@@ -635,7 +578,7 @@ nav ul li a:hover {
 }
 
 .contact-subtitle{
-    color: #ffffff; 
+    color: #ffffff;
 }
 .contact-description {
     font-size: 16px;
@@ -685,6 +628,8 @@ nav ul li a:hover {
     border: 1px solid #E5E7EB;
     border-radius: 5px;
     font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent for better blend */
+    color: #333;
 }
 
 textarea.form-control {
@@ -705,7 +650,7 @@ textarea.form-control {
 }
 
 .submit-btn:hover {
-    background-color: #5c97f6;
+    background-color: #4a7fd9; /* Darker shade for hover consistency */
     transform: translateY(-3px);
 }
 
@@ -767,4 +712,291 @@ footer {
     color: #9CA3AF;
     padding-top: 20px;
     border-top: 1px solid #374151;
+}
+
+/* -------------------- Responsive Styles -------------------- */
+
+/* For tablets and smaller desktops */
+@media (max-width: 992px) {
+    .container-domain,
+    .container-aboutus,
+    .container-con {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+
+/* For tablets and larger mobile phones */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center; /* Center logo and nav */
+        gap: 15px; /* Space between logo and nav */
+    }
+
+    .logo h1 {
+        font-size: 24px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center; /* Center nav items */
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    nav ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr; /* Already defined, but good to confirm */
+    }
+    
+    .hero-content {
+        order: 1; /* Already defined */
+        padding: 40px 20px;
+        text-align: center; /* Already defined */
+    }
+    
+    .hero-image {
+        order: 0; /* Already defined */
+        position: relative;
+        height: 350px; /* Already defined */
+    }
+    
+    .hero-btn {
+        align-self: center; /* Already defined */
+    }
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .container-domain,
+    .container-aboutus,
+    .container-con,
+    .container-milestones,
+    .container-presentations {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .section-title,
+    .section-title1 {
+        font-size: 28px;
+    }
+    .section-title-mil,
+    .section-title-ab {
+        font-size: 2rem;
+    }
+
+    .section-subtitle,
+    .section-subtitle-mil {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    /* Milestones Timeline adjustments */
+    .timeline::after {
+        left: 20px; /* Move line to the left */
+        margin-left: 0;
+    }
+
+    .milestone {
+        width: auto; /* Take available width minus margin */
+        margin-left: 40px; /* Space content to the right of the line */
+        padding-left: 20px; /* Inner padding */
+    }
+
+    .left,
+    .right {
+        left: 0; /* Reset desktop positioning */
+        width: calc(100% - 40px); /* Adjust width to fit in new layout */
+        margin-left: 40px; /* Align to the right of the timeline bar */
+        margin-bottom: 30px; /* Add space between milestones */
+    }
+    .left:last-of-type, .right:last-of-type {
+        margin-bottom: 0;
+    }
+
+
+    .milestone::after {
+        left: -32px; /* Position circle on the line (moves it left relative to milestone box) */
+                      /* (20px line offset + 10px half of circle width - 2px line width) approx. */
+        top: 20px; /* Adjust vertical alignment if needed */
+    }
+    /* Ensure both left and right milestones behave the same for the ::after pseudo-element */
+    .right::after {
+        left: -32px; /* Same as .milestone::after */
+        right: auto; /* Remove the desktop right positioning */
+    }
+
+
+    .subsection-title,
+    .subsection-title-ab {
+        font-size: 22px;
+    }
+
+    /* Team Section - already has auto-fit, but ensure gap is reasonable */
+    .team-container,
+    .supervisors-grid {
+        gap: 20px;
+    }
+    .team-img {
+        height: 300px; /* Adjust image height */
+    }
+
+    /* Contact Section */
+    .contact-container {
+        grid-template-columns: 1fr; /* Stack items */
+        gap: 30px;
+    }
+    .contact-info, .contact-form {
+        padding: 25px;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr; /* Stack footer sections */
+        text-align: center; /* Center text in footer sections */
+        gap: 30px;
+    }
+    .footer-links ul {
+        padding-left: 0; /* Remove default ul padding if any */
+    }
+    .footer-logo, .footer-links h3 {
+        margin-bottom: 15px;
+    }
+}
+
+/* For smaller mobile phones */
+@media (max-width: 600px) {
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero-btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+
+    .section-title,
+    .section-title1 {
+        font-size: 24px;
+    }
+    .section-title-mil,
+    .section-title-ab {
+        font-size: 1.8rem;
+    }
+
+    .section-subtitle,
+    .section-subtitle-mil {
+        font-size: 14px;
+    }
+
+    /* Document item responsive styles already present for max-width: 600px */
+    .document-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .download-btn {
+        align-self: flex-end;
+        width: auto;
+    }
+    .documents-list {
+        padding: 20px;
+    }
+
+    .domain-card {
+        padding: 20px;
+    }
+    .domain-card h3 {
+        font-size: 18px;
+    }
+    .domain-card p {
+        font-size: 14px;
+    }
+
+    .milestone {
+        padding: 15px;
+    }
+    .milestone-title {
+        font-size: 15px;
+    }
+
+    .team-img {
+        height: 250px;
+    }
+    .team-info {
+        padding: 15px;
+    }
+    .team-name {
+        font-size: 16px;
+    }
+    .team-name.supervisor-name {
+        font-size: 17px;
+    }
+
+    .form-control {
+        padding: 10px;
+        font-size: 15px;
+    }
+    .submit-btn {
+        padding: 10px 25px;
+        font-size: 15px;
+        width: 100%; /* Make submit button full width */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px; /* Reduce container padding on very small screens */
+    }
+
+    .logo h1 {
+        font-size: 20px;
+        margin-left: 8px;
+    }
+    nav ul li a {
+        font-size: 15px;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+    .hero p {
+        font-size: 14px;
+    }
+
+    .section-title, .section-title1 {
+        font-size: 20px;
+    }
+    .section-title-mil, .section-title-ab {
+        font-size: 1.6rem;
+    }
+
+    .footer-logo {
+        font-size: 20px;
+    }
+    .footer-links h3 {
+        font-size: 16px;
+    }
+    .footer-desc, .footer-links ul li a {
+        font-size: 14px;
+    }
 }
