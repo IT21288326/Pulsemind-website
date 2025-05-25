@@ -25,6 +25,7 @@ header {
     color: white;
     padding: 20px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Added for potential absolute positioning of mobile nav */
 }
 
 .header-content {
@@ -70,6 +71,37 @@ nav ul li a:hover {
     color: #C4B5FD;
 }
 
+/* NEW: Hamburger Menu Icon Styles */
+.hamburger-menu {
+    display: none; /* Hidden by default, shown in media query */
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px; /* Small padding around lines */
+    z-index: 1001; /* Ensure it's above other header content if nav overlays */
+}
+
+.hamburger-menu__line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white; /* Color of the hamburger lines */
+    margin: 5px 0; /* Spacing between lines */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Optional: Styles for 'X' state when menu is open */
+.hamburger-menu.open .hamburger-menu__line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger-menu.open .hamburger-menu__line:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.open .hamburger-menu__line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
 /* Hero Section */
 .hero {
     min-height: 600px;
@@ -78,13 +110,6 @@ nav ul li a:hover {
     position: relative;
     overflow: hidden;
 }
-
-/* .container definition for hero scope, already present but good to note */
-/* .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0; /* Note: Hero section's container had padding:0, while global has 0 20px. Be mindful of this override if .hero .container is used. */
-/* } */
 
 .hero-grid {
     display: grid;
@@ -144,13 +169,9 @@ nav ul li a:hover {
 }
 
 /* Section Styles */
-/* section {
-    padding: 60px 0;
-} */
-
 .container-milestones{
     padding: 30px;
-    background-image: url('./w14.jpg'); /* Ensure this path is correct relative to your CSS or use an absolute path */
+    background-image: url('./w14.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -175,7 +196,7 @@ nav ul li a:hover {
     padding-bottom: 50px;
     padding-left: 130px;
     padding-right: 130px;
-    background-image: url('./v.jpg'); /* Ensure this path is correct */
+    background-image: url('./v.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -183,13 +204,13 @@ nav ul li a:hover {
     font-size: 32px;
     text-align: center;
     color: #4B5563;
-    margin-bottom: 20px; /* Added for spacing */
+    margin-bottom: 20px;
 }
 .section-title1 {
     font-size: 32px;
     text-align: center;
     color: #4B5563;
-    margin-bottom: 20px; /* Added for spacing */
+    margin-bottom: 20px;
 }
 .section-subtitle {
     font-size: 18px;
@@ -276,12 +297,12 @@ nav ul li a:hover {
 
 .milestone {
     position: relative;
-    width: 45%; /* Adjusted in media query */
+    width: 45%;
     padding: 20px;
     background-color: white;
     border-radius: 6px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    margin-bottom: 20px; /* Added for spacing between stacked items on mobile */
+    margin-bottom: 20px;
 }
 
 .milestone::after {
@@ -289,7 +310,7 @@ nav ul li a:hover {
     position: absolute;
     width: 20px;
     height: 20px;
-    right: -10px; /* Adjusted in media query */
+    right: -10px;
     top: 30px;
     background-color: #5c97f6;
     border-radius: 50%;
@@ -297,15 +318,15 @@ nav ul li a:hover {
 }
 
 .left {
-    left: 0; /* Adjusted in media query */
+    left: 0;
 }
 
 .right {
-    left: 55%; /* Adjusted in media query */
+    left: 55%;
 }
 
 .right::after {
-    left: -10px; /* Adjusted in media query */
+    left: -10px;
 }
 
 .milestone-title {
@@ -386,7 +407,7 @@ nav ul li a:hover {
     padding: 8px 16px;
     color: #5c97f6;
     border: none;
-    background-color: transparent; /* Added for consistency, assuming it's like a link */
+    background-color: transparent;
     border-radius: 6px;
     font-weight: 500;
     font-size: 14px;
@@ -397,7 +418,7 @@ nav ul li a:hover {
 
 .download-btn:hover {
     transform: translateY(-1px);
-    color: #4a7fd9; /* Added hover effect for color */
+    color: #4a7fd9;
 }
 
 .download-btn:active {
@@ -414,14 +435,12 @@ nav ul li a:hover {
     font-size: 16px;
 }
 
-/* Alternative compact button style */
 .download-btn.compact {
     padding: 6px 12px;
     font-size: 12px;
     border-radius: 4px;
 }
 
-/* Loading state for download button */
 .download-btn.loading {
     opacity: 0.7;
     cursor: not-allowed;
@@ -487,8 +506,8 @@ nav ul li a:hover {
 .supervisors-grid {
     max-width: 900px;
     margin: 0 auto;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* This will become 1 column on smaller screens naturally */
-    gap: 30px; /* Added for consistency with .team-container */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .team-card {
@@ -552,24 +571,23 @@ nav ul li a:hover {
 
 /* Contact Section */
 .contact {
-    background-color: #F3F4F6; /* This is overridden by container-con background image */
+    background-color: #F3F4F6;
 }
 
 .contact-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
-    max-width: 1000px; /* This will be centered by .container-con's padding or container class */
-    margin: 0 auto; /* Center the grid if container-con doesn't have max-width */
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .contact-info {
-    background-color: white; /* This seems to be for a different design, .container-con has a background image and form is translucent */
+    background-color: white;
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    /* Styles for contact info within the .container-con context */
-    color: #ffffff; /* Assuming text should be white due to background image */
+    color: #ffffff;
 }
 
 .contact-item {
@@ -628,7 +646,7 @@ nav ul li a:hover {
     border: 1px solid #E5E7EB;
     border-radius: 5px;
     font-size: 16px;
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent for better blend */
+    background-color: rgba(255, 255, 255, 0.9);
     color: #333;
 }
 
@@ -650,7 +668,7 @@ textarea.form-control {
 }
 
 .submit-btn:hover {
-    background-color: #4a7fd9; /* Darker shade for hover consistency */
+    background-color: #4a7fd9;
     transform: translateY(-3px);
 }
 
@@ -716,7 +734,6 @@ footer {
 
 /* -------------------- Responsive Styles -------------------- */
 
-/* For tablets and smaller desktops */
 @media (max-width: 992px) {
     .container-domain,
     .container-aboutus,
@@ -726,51 +743,87 @@ footer {
     }
 }
 
-/* For tablets and larger mobile phones */
 @media (max-width: 768px) {
     .header-content {
-        flex-direction: column;
-        align-items: center; /* Center logo and nav */
-        gap: 15px; /* Space between logo and nav */
+        flex-direction: row; /* Keep logo and hamburger on same line */
+        justify-content: space-between; /* Ensure space between logo and hamburger */
+        align-items: center;
+        /* gap: 15px; /* Original gap might be too much if nav is hidden */
     }
 
     .logo h1 {
         font-size: 24px;
     }
 
+    /* --- Hamburger Menu Activation --- */
+    .hamburger-menu {
+        display: block; /* Show the hamburger icon */
+    }
+
+    nav {
+      width: 100%; /* Allow nav to take full width for its dropdown ul */
+      /* position: absolute; /* If nav ul needs to overlay content */
+      /* top: 100%; /* Position below the header if absolute */
+      /* left: 0; */
+      /* z-index: 1000; */
+    }
+
     nav ul {
+        display: none; /* Hide the nav list by default on mobile */
         flex-direction: column;
-        align-items: center; /* Center nav items */
+        align-items: center;
         width: 100%;
+        background: linear-gradient(135deg, #001a3f 0%, #000000 100%); /* Darker shade for dropdown */
+        padding: 15px 0;
+        position: absolute; /* Position it relative to the header */
+        top: 100%; /* Position below the header's bottom edge */
+        left: 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Add shadow for depth */
+        z-index: 1000;
+    }
+
+    nav ul.nav-active { /* This class will be toggled by JavaScript */
+        display: flex;
     }
 
     nav ul li {
         margin-left: 0;
-        margin-bottom: 10px;
+        margin-bottom: 0; /* Remove bottom margin, use padding on <a> instead */
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav ul li a {
+        padding: 12px 20px; /* Make tappable area larger */
+        display: block; /* Ensure the whole area is clickable */
+        font-size: 17px; /* Slightly larger font for mobile menu */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+    }
+    nav ul li:last-child a {
+        border-bottom: none; /* No border for the last item */
     }
 
-    nav ul li:last-child {
-        margin-bottom: 0;
-    }
+    /* --- End Hamburger Menu Activation --- */
+
 
     .hero-grid {
-        grid-template-columns: 1fr; /* Already defined, but good to confirm */
+        grid-template-columns: 1fr;
     }
     
     .hero-content {
-        order: 1; /* Already defined */
+        order: 1;
         padding: 40px 20px;
-        text-align: center; /* Already defined */
+        text-align: center;
     }
     
     .hero-image {
-        order: 0; /* Already defined */
+        order: 0;
         position: relative;
-        height: 350px; /* Already defined */
+        height: 350px;
     }
     
     .hero-btn {
-        align-self: center; /* Already defined */
+        align-self: center;
     }
 
     .hero h2 {
@@ -805,80 +858,71 @@ footer {
         margin-bottom: 30px;
     }
 
-    /* Milestones Timeline adjustments */
     .timeline::after {
-        left: 20px; /* Move line to the left */
+        left: 20px;
         margin-left: 0;
     }
 
     .milestone {
-        width: auto; /* Take available width minus margin */
-        margin-left: 40px; /* Space content to the right of the line */
-        padding-left: 20px; /* Inner padding */
+        width: auto;
+        margin-left: 40px;
+        padding-left: 20px;
     }
 
     .left,
     .right {
-        left: 0; /* Reset desktop positioning */
-        width: calc(100% - 40px); /* Adjust width to fit in new layout */
-        margin-left: 40px; /* Align to the right of the timeline bar */
-        margin-bottom: 30px; /* Add space between milestones */
+        left: 0;
+        width: calc(100% - 40px);
+        margin-left: 40px;
+        margin-bottom: 30px;
     }
     .left:last-of-type, .right:last-of-type {
         margin-bottom: 0;
     }
 
-
     .milestone::after {
-        left: -32px; /* Position circle on the line (moves it left relative to milestone box) */
-                      /* (20px line offset + 10px half of circle width - 2px line width) approx. */
-        top: 20px; /* Adjust vertical alignment if needed */
+        left: -32px;
+        top: 20px;
     }
-    /* Ensure both left and right milestones behave the same for the ::after pseudo-element */
     .right::after {
-        left: -32px; /* Same as .milestone::after */
-        right: auto; /* Remove the desktop right positioning */
+        left: -32px;
+        right: auto;
     }
-
 
     .subsection-title,
     .subsection-title-ab {
         font-size: 22px;
     }
 
-    /* Team Section - already has auto-fit, but ensure gap is reasonable */
     .team-container,
     .supervisors-grid {
         gap: 20px;
     }
     .team-img {
-        height: 300px; /* Adjust image height */
+        height: 300px;
     }
 
-    /* Contact Section */
     .contact-container {
-        grid-template-columns: 1fr; /* Stack items */
+        grid-template-columns: 1fr;
         gap: 30px;
     }
     .contact-info, .contact-form {
         padding: 25px;
     }
 
-    /* Footer */
     .footer-content {
-        grid-template-columns: 1fr; /* Stack footer sections */
-        text-align: center; /* Center text in footer sections */
+        grid-template-columns: 1fr;
+        text-align: center;
         gap: 30px;
     }
     .footer-links ul {
-        padding-left: 0; /* Remove default ul padding if any */
+        padding-left: 0;
     }
     .footer-logo, .footer-links h3 {
         margin-bottom: 15px;
     }
 }
 
-/* For smaller mobile phones */
 @media (max-width: 600px) {
     .hero h2 {
         font-size: 28px;
@@ -907,7 +951,6 @@ footer {
         font-size: 14px;
     }
 
-    /* Document item responsive styles already present for max-width: 600px */
     .document-item {
         flex-direction: column;
         align-items: flex-start;
@@ -959,22 +1002,20 @@ footer {
     .submit-btn {
         padding: 10px 25px;
         font-size: 15px;
-        width: 100%; /* Make submit button full width */
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 15px; /* Reduce container padding on very small screens */
+        padding: 0 15px;
     }
 
     .logo h1 {
         font-size: 20px;
         margin-left: 8px;
     }
-    nav ul li a {
-        font-size: 15px;
-    }
+    /* Mobile nav link font size already handled by nav ul li a in 768px breakpoint */
 
     .hero h2 {
         font-size: 24px;
