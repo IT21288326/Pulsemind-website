@@ -38,9 +38,9 @@ const AboutUs = () => {
       image: `${process.env.PUBLIC_URL}/img/members/supervisor.jpg` // Placeholder image, replace with actual image path
     },
     {
-      name: "Dr. Mihiri Samaraweera",
+      name: "Ms. Mihiri Samaraweera",
       id: "",
-      role: "Co-Supervisor",
+      role: "Project Co-Supervisor",
       image: `${process.env.PUBLIC_URL}/img/members/co-supervisor.jpg` // Placeholder image, replace with actual image path
     },
     {
