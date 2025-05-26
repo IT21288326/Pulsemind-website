@@ -38,12 +38,12 @@ const Milestones = () => {
       title: "Final Assessment & Viva",
       description: "Full system tested with comprehensive evaluation.",
       status: "pending",
-      date: "May 28th 2025",
+      date: "May 26th 2025",
       position:  "left"
     },
   
   {
-      date: "June 02nd 2025",
+      date: "May 26th 2025",
       title: "Website Assessment",
       description: "Final evaluation of the website implementation and functionality.",
       status: "pending",
